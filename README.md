@@ -48,7 +48,7 @@ node scraper.js
 ## Configuração (.env)
 
 ```
-KEYWORDS=node.js,typescript,python
+KEYWORDS= Exemplo:,node.js,typescript,python
 TELEGRAM_TOKEN=seu_token_aqui
 TELEGRAM_CHAT_ID=seu_chat_id_aqui
 ```
