@@ -1,10 +1,15 @@
 require('dotenv').config()
 
-const chamarAPI = require('./sources/remotive.js')
+const deduplicar = require('./deduplicar.js');
+const chamarAPI = require('./sources/remotive.js');
+const notificar = require('./notificar.js');
 
 async function main() {
     const vagas = await chamarAPI();
-    console.log(vagas);
+    const deduplicação = await deduplicar(vagas);
+    const notificação = await notificar(deduplicação)
+    console.log(deduplicação);
 }
 
-main();
+main().catch(console.error);
+

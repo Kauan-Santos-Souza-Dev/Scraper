@@ -19,7 +19,7 @@ async function chamarAPI(){
 
             }
         })    
-    const palavrasChaveLocalizacao = ["brazil", "brasil", "worldwide", "world", "remote", "south america", "latin america", "latam"]
+    const palavrasChaveLocalizacao = ["brazil", "brasil", "worldwide", "world", "remote", "south america", "latin america", "latam", "anywhere"]
     const filtrar = normalizar.filter((filtro) => {
     const local = (filtro.localizacao || "").toLowerCase();
     return palavrasChaveLocalizacao.some(keyword => local.includes(keyword))
@@ -32,7 +32,8 @@ async function chamarAPI(){
     
     return tituloMatch || descricaoMatch;
 }));
-    return filtroStacks;
+    return filtroStacks
+    
     } 
     catch(error) {
         console.log(error)
@@ -43,10 +44,6 @@ async function chamarAPI(){
 
 
 
-
 module.exports = chamarAPI;
 
-//Agora vou aplicar os filtros, isso deve filtrar e retornar somente as vagas que aceitem brasileiros.
-//Decidi aplicar dentro da função chamarAPI pois o "normalizar" existe somente dentro dentro da função chamarAPI, não tenho certeza se é o correto a se fazer nem onde exatamente colocar mas devo tentar.
-// vou usar um array.filter.
 
