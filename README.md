@@ -19,8 +19,8 @@ API → Normalização → Filtro de Localização → Filtro de Stack → Dedup
 - [x] Fetch e normalização (Remotive API)
 - [x] Filtro de localização por keywords
 - [x] Filtro de stack via `.env`
-- [ ] Deduplicação via `seen.json`
-- [ ] Notificação via Telegram
+- [x] Deduplicação via `seen.json`
+- [x] Notificação via Telegram
 - [ ] Scheduler (diário às 8h)
 
 ## Stack
