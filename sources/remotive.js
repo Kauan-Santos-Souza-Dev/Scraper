@@ -1,7 +1,33 @@
+require('dotenv').config()
+
+async function fetchWithRetry(url){
+    const delays = [1000, 3000, 7000]
+    
+    for(let i = 0; i<=2; i++){
+        try{
+            let resultado = await fetch(url);
+            if(resultado.ok === true){
+                return await resultado.json()
+                     
+            }
+        }
+        catch(error){
+            if( i== 2){
+                throw error
+            }
+            else { 
+                await new Promise(r => setTimeout(r, delays[i]))
+            }
+
+        }
+    }
+}
+
+
+
 async function chamarAPI(){
     try {
-        let resposta = await fetch('https://remotive.com/api/remote-jobs');
-        const dados =  await resposta.json()
+        let dados = await fetchWithRetry('https://remotive.com/api/remote-jobs')
         const normalizar = dados.jobs.map((vagas) => {
             return {
                 titulo: vagas.title,
@@ -41,7 +67,6 @@ async function chamarAPI(){
   
 
 }
-
 
 
 module.exports = chamarAPI;
