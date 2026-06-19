@@ -69,8 +69,3 @@ scraper/
 **Fase 1 — MVP (atual)**
 Bot pessoal com uma fonte, filtros básicos e notificação no Telegram.
 
-**Fase 2 — Produto**
-Multi-usuário, múltiplas fontes, dashboard web, modelo freemium.
-
-**Fase 3 — IA**
-Score de compatibilidade: nota + justificativa honesta sobre gaps.
