@@ -40,9 +40,9 @@ async function chamarAPI() {
             descricao:       vaga.description
         }))
 
-        const europeKeywords = ['europe', 'emea', 'germany', 'uk', 'netherlands',
-                                'spain', 'ireland', 'portugal', 'poland', 'france',
-                                'austria', 'sweden']
+        const europeKeywords = ['brazil', 'brasil', 'worldwide', 'world', 
+                          'remote', 'south america', 'latin america', 
+                          'latam', 'anywhere', 'global']
 
         const filtrarLocalizacao = normalizar.filter(vaga => {
             const local = (vaga.localizacao || '').toLowerCase()

@@ -2,7 +2,7 @@ const fs   = require('fs')
 const path = require('path')
 
 const SEEN_PATH = path.join(__dirname, 'seen.json')
-const TTL_MS    = 30 * 24 * 60 * 60 * 1000  /
+const TTL_MS    = 30 * 24 * 60 * 60 * 1000  
 
 function lerSeen() {
     try {

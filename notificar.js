@@ -8,7 +8,7 @@ async function notificar(vagas) {
             body: JSON.stringify({
                 chat_id:    process.env.TELEGRAM_CHAT_ID,
                 text:       texto,
-                parse_mode: 'Markdown'
+                
             })
         })
 
@@ -29,13 +29,13 @@ async function notificar(vagas) {
 
     for (const vaga of vagas) {
         const texto = [
-            `💼 *${vaga.titulo}*`,
-            `🏢 ${vaga.empresa}`,
-            `🌍 ${vaga.localizacao}`,
-            `📂 ${vaga.categoria}`,
-            `📦 ${vaga.tipo}`,
-            `⏰ ${vaga.data_publicacao}`,
-            `🔗 ${vaga.link}`
+    `💼 ${vaga.titulo}`,
+    `🏢 ${vaga.empresa}`,
+    `🌍 ${vaga.localizacao}`,
+    `📂 ${vaga.categoria}`,
+    `📦 ${vaga.tipo}`,
+    `⏰ ${vaga.data_publicacao}`,
+    `🔗 ${vaga.link}`
         ].join('\n')
 
         try {
