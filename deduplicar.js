@@ -1,33 +1,43 @@
-const { readFile, writeFile } = require('fs/promises')
+const fs   = require('fs')
+const path = require('path')
 
-async function deduplicar(vagasFiltradas) {
-    
-    let idsVistos = []
+const SEEN_PATH = path.join(__dirname, 'seen.json')
+const TTL_MS    = 30 * 24 * 60 * 60 * 1000  /
+
+function lerSeen() {
     try {
-        const conteudo = await readFile('./seen.json', 'utf8')
-        idsVistos = JSON.parse(conteudo)
+        return JSON.parse(fs.readFileSync(SEEN_PATH, 'utf-8'))
     } catch {
-       
+        return []
     }
+}
 
-    const vagasNovas = []
+function salvarSeen(seen) {
+    fs.writeFileSync(SEEN_PATH, JSON.stringify(seen, null, 2))
+}
 
-    for (const vaga of vagasFiltradas) {
-        if (idsVistos.includes(vaga.id)) {
-            
-        } else {
-            vagasNovas.push(vaga)
-            idsVistos.push(vaga.id)
-        }
-    }
+function limparAntigos(seen) {
+    const limite = Date.now() - TTL_MS
+    return seen.filter(entrada => entrada.timestampSeen > limite)
+}
 
-    await writeFile('./seen.json', JSON.stringify(idsVistos), 'utf8')
-    return vagasNovas
+async function deduplicar(vagas) {
+    let seen = lerSeen()
+    seen = limparAntigos(seen) 
+    
+    const seenIds = new Set(seen.map(e => `${e.id}-${e.fonte}`))
+
+    const novas = vagas.filter(vaga => !seenIds.has(`${vaga.id}-${vaga.fonte}`))
+
+    const novasEntradas = novas.map(vaga => ({
+        id:           vaga.id,
+        fonte:        vaga.fonte,
+        timestampSeen: Date.now()
+    }))
+
+    salvarSeen([...seen, ...novasEntradas])
+
+    return novas
 }
 
 module.exports = deduplicar
-
-
-
-
-
