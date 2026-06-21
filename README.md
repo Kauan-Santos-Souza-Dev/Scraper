@@ -21,7 +21,7 @@ API → Normalização → Filtro de Localização → Filtro de Stack → Dedup
 - [x] Filtro de stack via `.env`
 - [x] Deduplicação via `seen.json`
 - [x] Notificação via Telegram
-- [ ] Scheduler (diário às 8h) - Pendente para futuras atualizações
+- [x] Scheduler (diário às 8h)
 
 ## Stack
 
