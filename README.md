@@ -72,5 +72,7 @@ Bot pessoal com uma fonte, filtros básicos e notificação no Telegram.
 
 # ⚠️ Projeto em Pausa temporariamente 
 
-estudando para evoluir para a fase 2 e tornar um produto Seguro e Funcional.
+Estudando para evoluir para a fase 2 e tornar um produto Seguro e Funcional.
+
+Implementando funcionalidades garantindo segurança digital.
 
