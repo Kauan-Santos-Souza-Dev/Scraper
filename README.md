@@ -70,5 +70,7 @@ scraper/
 Bot pessoal com uma fonte, filtros básicos e notificação no Telegram.
 
 
-# ⚠️ Projeto em Pausa temporariamente , estudando para desenvolver para a Fase 2 e tornar um produto Seguro e Funcional.
+# ⚠️ Projeto em Pausa temporariamente 
+
+estudando para evoluir para a fase 2 e tornar um produto Seguro e Funcional.
 
