@@ -70,4 +70,10 @@ scraper/
 Bot pessoal com uma fonte, filtros básicos e notificação no Telegram.
 
 
-# 🚧 Em desenvolvimento — Fase 2
+## 🚧 Em desenvolvimento — Fase 2
+
+Trabalhando na evolução do projeto para torná-lo um produto mais robusto e seguro:
+
+- [ ] Reforço de segurança digital (validação de tokens, tratamento de erros de API)
+- [ ] Novas fontes de vagas além da Remotive API
+- [ ] Melhorias na lógica de deduplicação
